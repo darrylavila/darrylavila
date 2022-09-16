@@ -1,0 +1,146 @@
+
+
+.sixty_forty, .equal{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sixty_forty{
+  .content-left{
+    flex: 0 40%;
+    padding-right:32px
+  }
+  .content-right{
+    flex: 0 60%;
+    padding-left:32px
+  }
+}
+
+
+
+.complex{
+  min-height: 100vh;
+  padding:64px;
+
+  .content-right{
+    overflow: hidden;
+
+  }
+  
+}
+
+
+
+
+
+
+//DONATION FORM
+
+// .banner-form-right{
+//   header{
+//     display: none;
+//   }
+// }
+.banner-form-right {
+  .at-title {
+      display: none;
+  }
+
+  .at-inner {
+      max-width: 760px;
+      color: #fff;
+      background-color: rgba(255, 255, 255, 0.73);
+      padding: 50px 50px 30px;
+      float: right;
+      border-top: 5px solid #ff6200;
+      border-bottom: 5px solid #ff6200;
+      
+      @include on(991px){
+          max-width: 100%;
+          margin-top: 32px;
+      }
+
+  }
+
+  .at {
+      fieldset {
+          legend {
+              color: #0035a0;
+              padding: 0;
+          }
+      }
+      label {
+          color: #0035a0;
+      }
+      form {
+          .label-amount {
+              input[type="radio"]:checked + a,
+              &:hover > a {
+                  background-color: #ffede1;
+                  border-color: #0035a0;
+              }
+
+              & > a {
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  height: 50px;
+                  left: 0;
+                  display: block;
+                  background-color: transparent;
+                  border-radius: 4px;
+                  z-index: -1;
+                  border: 2px solid #0035a0;
+              }
+
+              width: 22%;
+              height: auto;
+              margin-right: 4%;
+              float: left;
+              color: #fff;
+              font-size: 24px;
+              background-image: none;
+              padding: 8px;
+              margin-bottom: 15px;
+              letter-spacing: -0.03em;
+              line-height: 1.428571429;
+              display: block;
+              cursor: pointer;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+              text-align: center;
+              text-shadow: -1px -1px 1px rgba(38, 116, 52, 0.1);
+              font-weight: 400;
+              white-space: nowrap;
+              position: relative;
+              z-index: 1;
+              color: #0035a0;
+          }
+      }
+
+      input[type="checkbox"] + span::before {
+          border: 1px solid #0035a0;
+      }
+      input[type="checkbox"]:checked + span:before {
+          background-color: #228ae6;
+          border-color: #228ae6;
+      }
+      input[type="checkbox"]:hover + span:before {
+          border-color: #1c7cd6;
+      }
+
+      .btn-at-primary {
+          //@include button--blue;
+          //@include btn--hover();
+          font-size: 1.2rem;
+          letter-spacing: 2px;
+          border-radius: 0;
+      }
+  }
+
+  .at-fields {
+      position: relative;
+  }
+}

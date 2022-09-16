@@ -6,7 +6,9 @@ global-styling:
     js/custom.js: {}
   css:
     component:
+      '//fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400' : {type: external, minified: true}
       css/style.css: {}
+      css/mods.css: {}
   dependencies:
     - core/jquery
     - core/drupal

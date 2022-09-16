@@ -1,0 +1,21 @@
+header{
+  position: fixed;
+  width: 100%;
+  top:0;
+  z-index: 10;
+
+  @include on(640px){
+    position:initial;
+    background: var(--bs-primary);
+  }
+}
+
+#navbar-top{
+  padding-top: 16px;
+}
+
+.user-logged-in{
+  header{
+    top:79px;
+  }
+}

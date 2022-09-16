@@ -11,6 +11,9 @@
     attach: function(context, settings) {
 
       // Custom code here
+      
+      // var mb =$('#alignment').text();
+      // $('.banner').addClass(mb);
 
     }
   };

@@ -1,0 +1,90 @@
+diff --git a/src/FieldGroupFormatterBase.php b/src/FieldGroupFormatterBase.php
+index 0230b9a..45debd7 100644
+--- a/src/FieldGroupFormatterBase.php
++++ b/src/FieldGroupFormatterBase.php
+@@ -111,6 +111,15 @@ abstract class FieldGroupFormatterBase extends PluginSettingsBase implements Fie
+       '#element_validate' => [[$class, 'validateCssClass']],
+     ];
+ 
++    if (\Drupal::moduleHandler()->moduleExists('token')) {
++      $form['token_help'] = array(
++        '#theme' => 'token_tree_link',
++        '#token_types' => [$this->group->entity_type],
++        '#weight' => 12
++      );
++      $form['classes']['#element_validate'] = [[$class, 'validateCssClassToken']];
++    }
++
+     return $form;
+ 
+   }
+@@ -211,6 +220,22 @@ abstract class FieldGroupFormatterBase extends PluginSettingsBase implements Fie
+     }
+   }
+ 
++  /**
++   * Validate the entered css class with token from the submitted format settings.
++   *
++   * @param array $element
++   *   The validated element.
++   * @param \Drupal\Core\Form\FormStateInterface $form_state
++   *   The state of the form.
++   */
++  public static function validateCssClassToken(array $element, FormStateInterface $form_state) {
++    $form_state_values = $form_state->getValues();
++    $plugin_name = $form_state->get('plugin_settings_edit');
++    if (!empty($form_state_values['fields'][$plugin_name]['settings_edit_form']['settings']['classes']) && !preg_match('![A-Za-z0-9-_ ]*(\[[\w]+:([\w]+:)*[\w]+\])*!', $form_state_values['fields'][$plugin_name]['settings_edit_form']['settings']['classes'])) {
++      $form_state->setError($element, t('The css class must include only letters, numbers, underscores, dashes and token fields.'));
++    }
++  }
++
+   /**
+    * Validate the entered id attribute from the submitted format settings.
+    *
+diff --git a/src/Plugin/field_group/FieldGroupFormatter/HtmlElement.php b/src/Plugin/field_group/FieldGroupFormatter/HtmlElement.php
+index 60e4d53..c497d10 100644
+--- a/src/Plugin/field_group/FieldGroupFormatter/HtmlElement.php
++++ b/src/Plugin/field_group/FieldGroupFormatter/HtmlElement.php
+@@ -3,6 +3,7 @@
+ namespace Drupal\field_group\Plugin\field_group\FieldGroupFormatter;
+ 
+ use Drupal\field_group\Element\HtmlElement as HtmlElementRenderElement;
++use Drupal\Core\Entity\EntityInterface;
+ use Drupal\Component\Utility\Html;
+ use Drupal\Core\Form\FormState;
+ use Drupal\Core\Template\Attribute;
+@@ -53,6 +54,12 @@ class HtmlElement extends FieldGroupFormatterBase {
+ 
+     // Add the classes to the attributes array.
+     $classes = $this->getClasses();
++    if (\Drupal::moduleHandler()->moduleExists('token')) {
++      if (isset($processed_object["#{$this->group->entity_type}"])) {
++        $entity = $processed_object["#{$this->group->entity_type}"];
++        $classes = $this->tokenizeClasses($entity, $classes);
++      }
++    }
+     if (!empty($classes)) {
+       if (!isset($element_attributes['class'])) {
+         $element_attributes['class'] = [];
+@@ -253,5 +260,21 @@ class HtmlElement extends FieldGroupFormatterBase {
+     return $defaults;
+ 
+   }
++ 
++  /**
++   * @param \Drupal\Core\Entity\EntityInterface $entity
++   * @param array $classes
++   * @return array
++   */
++  private function tokenizeClasses(EntityInterface $entity, array $classes) {
++    $token = \Drupal::token();
++    $variables = [
++      $entity->getEntityTypeId() => $entity
++    ];
++
++    $classString = implode(' ', $classes);
++    $tokenizedClasses = $token->replace($classString, $variables, ['clear' => TRUE]);
++    return explode(' ', $tokenizedClasses);
++  }
+ 
+ }

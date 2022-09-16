@@ -1,0 +1,15 @@
+@import "mixins";
+@import "typography";
+@import "variables";
+
+
+@import 'msc/header';
+@import 'msc/button';
+
+
+//sections
+@import 'msc/onepagerdefault';
+@import 'msc/section/banner';
+@import 'msc/section/list-component';
+@import 'msc/section/qoute';
+@import 'msc/section/donate';

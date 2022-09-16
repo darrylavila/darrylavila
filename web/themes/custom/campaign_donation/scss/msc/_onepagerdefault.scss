@@ -1,0 +1,24 @@
+//MAIN CONTENT WRAPPER
+.main-content{
+  padding:0;
+}
+
+.node__content{
+  margin-top: 0;
+}
+
+//admin tab editor
+
+.user-logged-in{
+  nav.tabs{
+    max-width: 50%;
+    margin:auto;
+    
+    ul.nav-tabs{
+      text-transform: uppercase;
+      font-size:14px;
+      letter-spacing: 0.9px;
+    }
+  
+  }
+}

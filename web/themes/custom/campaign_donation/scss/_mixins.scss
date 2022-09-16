@@ -1,0 +1,21 @@
+
+@mixin on($media) {
+  
+  @media all and (max-width: $media) {
+      @content;
+  }
+
+}
+
+@mixin in($media) {
+  @media (min-width: $media) {
+    @content;
+  }
+}
+
+@mixin clamp($line) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

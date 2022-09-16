@@ -1,0 +1,32 @@
+.banner{
+  height:100vh;
+  background-color:#eee;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 64px;
+
+
+  //left align
+  &.left_align{
+    align-items: flex-start;
+    text-align: left;
+  }
+  //right align
+  &.right_align{
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  // center align
+  &.center_align{
+    align-items: center;
+    text-align: center;
+  }
+
+  //h1 title
+  h1{
+    font-weight: 600;
+  }
+}

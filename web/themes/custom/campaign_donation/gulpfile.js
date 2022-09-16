@@ -22,7 +22,7 @@ let gulp = require('gulp'),
 
 const paths = {
   scss: {
-    src: './scss/style.scss',
+    src: './scss/*.scss',
     dest: './css',
     watch: './scss/**/*.scss',
     bootstrap: './node_modules/bootstrap/scss/bootstrap.scss',
@@ -58,7 +58,7 @@ function styles () {
         'Android >= 4',
         'Opera >= 12']
     })]))
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write('maps'))
     .pipe(gulp.dest(paths.scss.dest))
     .pipe(cleanCss())
     .pipe(rename({ suffix: '.min' }))
@@ -76,7 +76,7 @@ function js () {
 // Static Server + watching scss/html files
 function serve () {
   browserSync.init({
-    proxy: 'https://www.drupal.org',
+    proxy: 'http://localhost:49610',
   })
 
   gulp.watch([paths.scss.watch, paths.scss.bootstrap], styles).on('change', browserSync.reload)

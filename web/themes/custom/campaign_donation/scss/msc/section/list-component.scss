@@ -1,0 +1,91 @@
+.list-component{
+  padding: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: center;
+  background-color: #ccc;
+  
+
+  .listed-components{
+
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: center;
+
+    & > .item{
+      text-align: center;
+    }
+
+    .thumbnail{
+      max-width: 250px;
+      margin-left:auto;
+      margin-right: auto;
+    }
+
+
+    @include on(640px){
+      width: 100%;
+    }
+  }
+
+  .subtitle{
+    padding-bottom:32px;
+    margin-bottom: 32px;
+    position: relative;
+
+    &:after{
+      content:'';
+      position:absolute;
+      width:80px;
+      height: 8px;
+      background:#fff;
+      bottom:0;
+      left: calc(50% - 40px);
+    }
+  }
+
+  h2, h3{
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  h2{
+    margin-bottom: 32px;
+    text-align: center;
+  }
+  h3{
+    margin-bottom: 16px;
+  }
+
+  .blazy--field{
+    
+    @include in(560px){
+      max-width: 250px;
+    }
+  }
+
+}
+
+//node image field
+.node .field--type-image{
+  @include in(560px){
+      float:none;
+      margin:0;
+  }
+}
+
+
+//THUMBNAIL
+.thumbnail{
+  overflow: hidden;
+  border-radius: 50%;
+  margin-bottom: 32px;
+  transition: transform .2s, -webkit-transform .2s;
+  &:hover{
+    
+    transform: scale(1.1);
+  }
+}
