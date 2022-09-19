@@ -12,6 +12,8 @@ header{
 
 #navbar-top{
   padding-top: 16px;
+  max-width: $max-container;
+  margin: auto;
 }
 
 .user-logged-in{

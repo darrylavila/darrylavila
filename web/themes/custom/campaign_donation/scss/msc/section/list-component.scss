@@ -4,7 +4,9 @@
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
+  min-height: 80vh;
+  max-width: $max-container;
+  margin: auto;
   justify-content: center;
   background-color: #ccc;
   
@@ -18,6 +20,13 @@
 
     & > .item{
       text-align: center;
+
+      &:hover{
+        .thumbnail{
+          overflow: hidden;
+          transform: scale(1.1);
+        }
+      }
     }
 
     .thumbnail{

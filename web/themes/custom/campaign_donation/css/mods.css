@@ -16,6 +16,8 @@ header {
 
 #navbar-top {
   padding-top: 1rem;
+  max-width: 1920px;
+  margin: auto;
 }
 
 .user-logged-in header {
@@ -47,8 +49,14 @@ header {
   letter-spacing: 0.05625rem;
 }
 
+.site-footer__bottom .region-footer-fifth {
+  max-width: 1920px;
+  margin: auto;
+}
+
 .banner {
-  height: 100vh;
+  min-height: 80vh;
+  max-height: 900px;
   background-color: #eee;
   display: -webkit-box;
   display: -webkit-flex;
@@ -67,6 +75,8 @@ header {
       -ms-flex-pack: end;
           justify-content: flex-end;
   padding: 4rem;
+  max-width: 1920px;
+  margin: auto;
 }
 .banner.left_align {
   -webkit-box-align: start;
@@ -111,7 +121,9 @@ header {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 100vh;
+  min-height: 80vh;
+  max-width: 1920px;
+  margin: auto;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
@@ -134,6 +146,12 @@ header {
 }
 .list-component .listed-components > .item {
   text-align: center;
+}
+.list-component .listed-components > .item:hover .thumbnail {
+  overflow: hidden;
+  -webkit-transform: scale(1.1);
+       -o-transform: scale(1.1);
+          transform: scale(1.1);
 }
 .list-component .listed-components .thumbnail {
   max-width: 250px;
@@ -205,9 +223,11 @@ header {
           flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
+  min-height: 80vh;
 }
 .qoute_wrapper.fullscreen {
+  max-width: 1920px;
+  margin: auto;
   -webkit-align-content: flex-end;
       -ms-flex-line-pack: end;
           align-content: flex-end;
@@ -236,6 +256,7 @@ header {
   margin-bottom: 4rem;
   padding: 2rem;
   color: #fff;
+  mix-blend-mode: hard-light;
 }
 .qoute_wrapper.side_by_side {
   max-height: 50vh;
@@ -255,7 +276,7 @@ header {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
   width: 100%;
-  max-width: 1425px;
+  max-width: 1920px;
   margin: auto;
 }
 .qoute_wrapper.side_by_side .qoute-container > * {
@@ -331,18 +352,34 @@ blockquote {
   padding-left: 2rem;
 }
 
+.equal .content-left, .equal .content-right {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 50%;
+      -ms-flex: 0 50%;
+          flex: 0 50%;
+}
+.equal .content-left {
+  padding-right: 2rem;
+}
+.equal .content-right {
+  padding-left: 2rem;
+}
+
 .complex {
-  min-height: 100vh;
+  max-height: 900px;
+  height: 80vh;
   padding: 4rem;
+  max-width: 1920px;
+  margin: auto;
 }
 .complex .content-right {
   overflow: hidden;
 }
 
-.banner-form-right .at-title {
+.content-right .at-title {
   display: none;
 }
-.banner-form-right .at-inner {
+.content-right .at-inner {
   max-width: 760px;
   color: #fff;
   background-color: rgba(255, 255, 255, 0.73);
@@ -350,21 +387,22 @@ blockquote {
   float: right;
   border-top: 5px solid #ff6200;
   border-bottom: 5px solid #ff6200;
+  width: 100%;
 }
 @media all and (max-width: 61.9375rem) {
-  .banner-form-right .at-inner {
+  .content-right .at-inner {
     max-width: 100%;
     margin-top: 2rem;
   }
 }
-.banner-form-right .at fieldset legend {
+.content-right .at fieldset legend {
   color: #0035a0;
   padding: 0;
 }
-.banner-form-right .at label {
+.content-right .at label {
   color: #0035a0;
 }
-.banner-form-right .at form .label-amount {
+.content-right .at form .label-amount {
   width: 22%;
   height: auto;
   margin-right: 4%;
@@ -390,11 +428,11 @@ blockquote {
   z-index: 1;
   color: #0035a0;
 }
-.banner-form-right .at form .label-amount input[type=radio]:checked + a, .banner-form-right .at form .label-amount:hover > a {
+.content-right .at form .label-amount input[type=radio]:checked + a, .content-right .at form .label-amount:hover > a {
   background-color: #ffede1;
   border-color: #0035a0;
 }
-.banner-form-right .at form .label-amount > a {
+.content-right .at form .label-amount > a {
   position: absolute;
   top: 0;
   right: 0;
@@ -406,22 +444,22 @@ blockquote {
   z-index: -1;
   border: 2px solid #0035a0;
 }
-.banner-form-right .at input[type=checkbox] + span::before {
+.content-right .at input[type=checkbox] + span::before {
   border: 1px solid #0035a0;
 }
-.banner-form-right .at input[type=checkbox]:checked + span:before {
+.content-right .at input[type=checkbox]:checked + span:before {
   background-color: #228ae6;
   border-color: #228ae6;
 }
-.banner-form-right .at input[type=checkbox]:hover + span:before {
+.content-right .at input[type=checkbox]:hover + span:before {
   border-color: #1c7cd6;
 }
-.banner-form-right .at .btn-at-primary {
+.content-right .at .btn-at-primary {
   font-size: 1.2rem;
   letter-spacing: 0.125rem;
   border-radius: 0;
 }
-.banner-form-right .at-fields {
+.content-right .at-fields {
   position: relative;
 }
 /*# sourceMappingURL=maps/mods.css.map */

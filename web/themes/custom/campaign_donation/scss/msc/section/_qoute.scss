@@ -3,12 +3,13 @@
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
+  min-height: 80vh;
 
 
   //FULLSCREEN SETTINGS
   &.fullscreen{
-    
+    max-width: $max-container;
+    margin: auto;
     align-content: flex-end;
     .qoute-container{
       width: 100%;
@@ -37,6 +38,7 @@
       margin-bottom: 64px;
       padding:32px;
       color: #fff;
+      mix-blend-mode: hard-light;
     }
   }
 
@@ -52,7 +54,7 @@
       display: flex;
       flex-wrap: wrap;
       width: 100%;
-      max-width: 1425px;
+      max-width: $max-container;
       margin: auto;
       > *{
         flex: 1;

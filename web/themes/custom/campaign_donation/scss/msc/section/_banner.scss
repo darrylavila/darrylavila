@@ -1,11 +1,15 @@
 .banner{
-  height:100vh;
+  min-height:80vh;
+  max-height: 900px;
   background-color:#eee;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: flex-end;
   padding: 64px;
+
+  max-width: $max-container;
+  margin: auto;
 
 
   //left align

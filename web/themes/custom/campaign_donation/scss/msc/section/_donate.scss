@@ -16,11 +16,28 @@
   }
 }
 
+.equal{
+  .content-left,.content-right{
+    flex: 0 50%;
+  }
+  .content-left{
+    padding-right:32px;
+  }
+  .content-right{
+    padding-left:32px;
+  }
+}
+
+
 
 
 .complex{
-  min-height: 100vh;
+  max-height:900px;
+  height: 80vh;
   padding:64px;
+  max-width: $max-container;
+  margin: auto;
+
 
   .content-right{
     overflow: hidden;
@@ -41,7 +58,7 @@
 //     display: none;
 //   }
 // }
-.banner-form-right {
+.content-right {
   .at-title {
       display: none;
   }
@@ -54,6 +71,7 @@
       float: right;
       border-top: 5px solid #ff6200;
       border-bottom: 5px solid #ff6200;
+      width: 100%;
       
       @include on(991px){
           max-width: 100%;
