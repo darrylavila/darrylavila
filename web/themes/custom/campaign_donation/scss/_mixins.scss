@@ -19,3 +19,11 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+@mixin height_init(){
+  $height: 690px;
+
+  min-height: $height;
+  height: 100%;
+
+}

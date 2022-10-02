@@ -1,6 +1,6 @@
 .banner{
-  min-height:80vh;
-  max-height: 900px;
+  @include height_init();
+  
   background-color:#eee;
   display: flex;
   flex-wrap: wrap;

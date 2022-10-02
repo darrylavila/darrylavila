@@ -49,14 +49,18 @@ header {
   letter-spacing: 0.05625rem;
 }
 
+.site-footer {
+  padding-top: 4rem;
+}
+
 .site-footer__bottom .region-footer-fifth {
   max-width: 1920px;
   margin: auto;
 }
 
 .banner {
-  min-height: 80vh;
-  max-height: 900px;
+  min-height: 690px;
+  height: 100%;
   background-color: #eee;
   display: -webkit-box;
   display: -webkit-flex;
@@ -104,6 +108,8 @@ header {
 }
 
 .list-component {
+  min-height: 690px;
+  height: 100%;
   padding: 3.75rem;
   display: -webkit-box;
   display: -webkit-flex;
@@ -121,7 +127,6 @@ header {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 80vh;
   max-width: 1920px;
   margin: auto;
   -webkit-box-pack: center;
@@ -214,6 +219,8 @@ header {
 }
 
 .qoute_wrapper {
+  min-height: 690px;
+  height: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -223,7 +230,6 @@ header {
           flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  min-height: 80vh;
 }
 .qoute_wrapper.fullscreen {
   max-width: 1920px;
@@ -352,6 +358,11 @@ blockquote {
   padding-left: 2rem;
 }
 
+@media all and (max-width: 40rem) {
+  .equal {
+    display: block;
+  }
+}
 .equal .content-left, .equal .content-right {
   -webkit-box-flex: 0;
   -webkit-flex: 0 50%;
@@ -361,16 +372,31 @@ blockquote {
 .equal .content-left {
   padding-right: 2rem;
 }
+@media all and (max-width: 40rem) {
+  .equal .content-left {
+    padding-right: 0;
+  }
+}
 .equal .content-right {
   padding-left: 2rem;
 }
+@media all and (max-width: 40rem) {
+  .equal .content-right {
+    padding-left: 0;
+  }
+}
 
 .complex {
-  max-height: 900px;
-  height: 80vh;
+  min-height: 690px;
+  height: 100%;
   padding: 4rem;
   max-width: 1920px;
   margin: auto;
+}
+@media all and (max-width: 40rem) {
+  .complex {
+    padding: 2rem;
+  }
 }
 .complex .content-right {
   overflow: hidden;

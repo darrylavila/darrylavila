@@ -17,14 +17,24 @@
 }
 
 .equal{
+  
+  @include on(640px){
+    display: block;
+  }
   .content-left,.content-right{
     flex: 0 50%;
   }
   .content-left{
     padding-right:32px;
+    @include on(640px){
+      padding-right:0;
+    }
   }
   .content-right{
     padding-left:32px;
+    @include on(640px){
+      padding-left:0;
+    }
   }
 }
 
@@ -32,12 +42,15 @@
 
 
 .complex{
-  max-height:900px;
-  height: 80vh;
+  @include height_init();
+
   padding:64px;
   max-width: $max-container;
   margin: auto;
-
+  
+  @include on(640px){
+    padding: 32px;
+  }
 
   .content-right{
     overflow: hidden;

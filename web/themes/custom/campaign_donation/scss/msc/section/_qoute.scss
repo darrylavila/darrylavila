@@ -1,9 +1,11 @@
 .qoute_wrapper{
+  @include height_init();
+  
   display: flex;
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  min-height: 80vh;
+  
 
 
   //FULLSCREEN SETTINGS
