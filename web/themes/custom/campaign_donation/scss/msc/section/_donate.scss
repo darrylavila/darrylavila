@@ -17,12 +17,16 @@
 }
 
 .equal{
-  
+  flex-wrap: nowrap;
+  padding: 64px;
+  max-width: 1920px;
+  margin: auto;
   @include on(640px){
     display: block;
   }
   .content-left,.content-right{
     flex: 0 50%;
+    width: 50%;
   }
   .content-left{
     padding-right:32px;
@@ -35,6 +39,14 @@
     @include on(640px){
       padding-left:0;
     }
+  }
+}
+
+.simple{
+  &.sixty_forty{
+    padding:64px;
+    max-width: 1920px;
+    margin: auto;
   }
 }
 

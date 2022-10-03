@@ -358,6 +358,14 @@ blockquote {
   padding-left: 2rem;
 }
 
+.equal {
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  padding: 4rem;
+  max-width: 1920px;
+  margin: auto;
+}
 @media all and (max-width: 40rem) {
   .equal {
     display: block;
@@ -368,6 +376,7 @@ blockquote {
   -webkit-flex: 0 50%;
       -ms-flex: 0 50%;
           flex: 0 50%;
+  width: 50%;
 }
 .equal .content-left {
   padding-right: 2rem;
@@ -384,6 +393,12 @@ blockquote {
   .equal .content-right {
     padding-left: 0;
   }
+}
+
+.simple.sixty_forty {
+  padding: 4rem;
+  max-width: 1920px;
+  margin: auto;
 }
 
 .complex {
