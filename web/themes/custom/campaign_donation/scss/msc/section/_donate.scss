@@ -30,6 +30,9 @@
   }
   .content-left{
     padding-right:32px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     @include on(640px){
       padding-right:0;
     }
